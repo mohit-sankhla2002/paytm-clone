@@ -1,0 +1,655 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>web documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">web documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-typealiases">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Miscellaneous</li>
+  <li class="breadcrumb-item">Type aliases</li>
+</ol>
+
+<section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#Diff" title=".next/types/app/layout.ts" ><b>Diff</b>&nbsp;&nbsp;&nbsp;(.next/.../layout.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Diff" title=".next/types/app/page.ts" ><b>Diff</b>&nbsp;&nbsp;&nbsp;(.next/.../page.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#FirstArg" title=".next/types/app/layout.ts" ><b>FirstArg</b>&nbsp;&nbsp;&nbsp;(.next/.../layout.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#FirstArg" title=".next/types/app/page.ts" ><b>FirstArg</b>&nbsp;&nbsp;&nbsp;(.next/.../page.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#MaybeField" title=".next/types/app/layout.ts" ><b>MaybeField</b>&nbsp;&nbsp;&nbsp;(.next/.../layout.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#MaybeField" title=".next/types/app/page.ts" ><b>MaybeField</b>&nbsp;&nbsp;&nbsp;(.next/.../page.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Negative" title=".next/types/app/layout.ts" ><b>Negative</b>&nbsp;&nbsp;&nbsp;(.next/.../layout.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Negative" title=".next/types/app/page.ts" ><b>Negative</b>&nbsp;&nbsp;&nbsp;(.next/.../page.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#NonNegative" title=".next/types/app/layout.ts" ><b>NonNegative</b>&nbsp;&nbsp;&nbsp;(.next/.../layout.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#NonNegative" title=".next/types/app/page.ts" ><b>NonNegative</b>&nbsp;&nbsp;&nbsp;(.next/.../page.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Numeric" title=".next/types/app/layout.ts" ><b>Numeric</b>&nbsp;&nbsp;&nbsp;(.next/.../layout.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Numeric" title=".next/types/app/page.ts" ><b>Numeric</b>&nbsp;&nbsp;&nbsp;(.next/.../page.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#OmitWithTag" title=".next/types/app/layout.ts" ><b>OmitWithTag</b>&nbsp;&nbsp;&nbsp;(.next/.../layout.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#OmitWithTag" title=".next/types/app/page.ts" ><b>OmitWithTag</b>&nbsp;&nbsp;&nbsp;(.next/.../page.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#PageParams" title=".next/types/app/layout.ts" ><b>PageParams</b>&nbsp;&nbsp;&nbsp;(.next/.../layout.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#PageParams" title=".next/types/app/page.ts" ><b>PageParams</b>&nbsp;&nbsp;&nbsp;(.next/.../page.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#RevalidateRange" title=".next/types/app/layout.ts" ><b>RevalidateRange</b>&nbsp;&nbsp;&nbsp;(.next/.../layout.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#RevalidateRange" title=".next/types/app/page.ts" ><b>RevalidateRange</b>&nbsp;&nbsp;&nbsp;(.next/.../page.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SecondArg" title=".next/types/app/layout.ts" ><b>SecondArg</b>&nbsp;&nbsp;&nbsp;(.next/.../layout.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SecondArg" title=".next/types/app/page.ts" ><b>SecondArg</b>&nbsp;&nbsp;&nbsp;(.next/.../page.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#TEntry" title=".next/types/app/layout.ts" ><b>TEntry</b>&nbsp;&nbsp;&nbsp;(.next/.../layout.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#TEntry" title=".next/types/app/page.ts" ><b>TEntry</b>&nbsp;&nbsp;&nbsp;(.next/.../page.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Zero" title=".next/types/app/layout.ts" ><b>Zero</b>&nbsp;&nbsp;&nbsp;(.next/.../layout.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Zero" title=".next/types/app/page.ts" ><b>Zero</b>&nbsp;&nbsp;&nbsp;(.next/.../page.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>.next/types/app/layout.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Diff"></a>
+                    <span class="name "><b>Diff</b><a href="#Diff"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="FirstArg"></a>
+                    <span class="name "><b>FirstArg</b><a href="#FirstArg"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="MaybeField"></a>
+                    <span class="name "><b>MaybeField</b><a href="#MaybeField"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Negative"></a>
+                    <span class="name "><b>Negative</b><a href="#Negative"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="NonNegative"></a>
+                    <span class="name "><b>NonNegative</b><a href="#NonNegative"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Numeric"></a>
+                    <span class="name "><b>Numeric</b><a href="#Numeric"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>number | </code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="OmitWithTag"></a>
+                    <span class="name "><b>OmitWithTag</b><a href="#OmitWithTag"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>Omit&lt;T | K&gt;</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="PageParams"></a>
+                    <span class="name "><b>PageParams</b><a href="#PageParams"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="RevalidateRange"></a>
+                    <span class="name "><b>RevalidateRange</b><a href="#RevalidateRange"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SecondArg"></a>
+                    <span class="name "><b>SecondArg</b><a href="#SecondArg"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="TEntry"></a>
+                    <span class="name "><b>TEntry</b><a href="#TEntry"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Zero"></a>
+                    <span class="name "><b>Zero</b><a href="#Zero"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>&quot;0&quot; | &quot;0n&quot;</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>.next/types/app/page.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Diff"></a>
+                    <span class="name "><b>Diff</b><a href="#Diff"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="FirstArg"></a>
+                    <span class="name "><b>FirstArg</b><a href="#FirstArg"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="MaybeField"></a>
+                    <span class="name "><b>MaybeField</b><a href="#MaybeField"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Negative"></a>
+                    <span class="name "><b>Negative</b><a href="#Negative"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="NonNegative"></a>
+                    <span class="name "><b>NonNegative</b><a href="#NonNegative"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Numeric"></a>
+                    <span class="name "><b>Numeric</b><a href="#Numeric"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>number | </code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="OmitWithTag"></a>
+                    <span class="name "><b>OmitWithTag</b><a href="#OmitWithTag"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>Omit&lt;T | K&gt;</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="PageParams"></a>
+                    <span class="name "><b>PageParams</b><a href="#PageParams"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="RevalidateRange"></a>
+                    <span class="name "><b>RevalidateRange</b><a href="#RevalidateRange"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SecondArg"></a>
+                    <span class="name "><b>SecondArg</b><a href="#SecondArg"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="TEntry"></a>
+                    <span class="name "><b>TEntry</b><a href="#TEntry"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Zero"></a>
+                    <span class="name "><b>Zero</b><a href="#Zero"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>&quot;0&quot; | &quot;0n&quot;</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-typealiases';
+            var COMPODOC_CURRENT_PAGE_URL = 'typealiases.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
